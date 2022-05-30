@@ -3,12 +3,12 @@ package com.example.hello.dto;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
-import java.util.List;
-
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class PutRequestDto {
+public class UserDto {
     private String name;
     private int age;
+    private String phoneNumber;
+    private String address;
 
     public String getName() {
         return name;
@@ -26,22 +26,29 @@ public class PutRequestDto {
         this.age = age;
     }
 
-    public List<CarDto> getCarList() {
-        return carList;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setCarList(List<CarDto> carList) {
-        this.carList = carList;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    private List<CarDto> carList;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     @Override
     public String toString() {
-        return "PutRequestDto{" +
+        return "UserDto{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", carList=" + carList +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
